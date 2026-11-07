@@ -1,6 +1,0 @@
-git clone https://github.com/Jodi22K/jodi22k.github.io.git
-cd jodi22k.github.io
-git switch trunk
-git mv "cleaur web.webm" "cleaurweb.webm""
-git commit -m "Renamez"
-git push
