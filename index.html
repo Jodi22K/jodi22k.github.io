@@ -182,16 +182,35 @@ acceptance testing in wealth operations to translate technical findings, alignin
 								</p>
 								</section>
 								<!-- THEME SONG OF THE IFRAMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE -->
-									<iframe width="100%" height="125" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-										
-									</iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-						
-									<a href="https://soundcloud.com/gunna" title="OK, please take a brief musical intermission now - here is GUNNA" 
-								 target="_blank" style="color: #cccccc; text-decoration: none;">GUNNAA</a> · <a href="https://soundcloud.com/gunna/sun-came-out" title="Sun Came Out" target="_blank" style="color: #cccccc; text-decoration: none;">Sun Came Out</a>
-									
-									</div>
-					
+								
+								<div class="theme-song-picker">
+								<label for="themeSongSelect">🎧 Play My Theme Song of the:</label>
+								<select id="themeSongSelect">
+									<option value="Site">...Site</option>
+									<option value="Week">...Week</option>
+									<option value="Month">...Month</option>
+								</select>
 							</div>
+											
+							<div class="theme-song-player">
+							<iframe id="themeSongFrame"
+									width="100%"
+									height="125"
+									scrolling="no"
+									frameborder="no"
+									allow="autoplay; encrypted-media"
+									src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+											</iframe>
+
+								
+	<div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+		<a href="https://soundcloud.com/gunna" target="_blank" rel="noopener noreferrer">GUNNAA</a> ·
+		<a href="https://soundcloud.com/gunna/sun-came-out" target="_blank" rel="noopener noreferrer">Sun Came Out</a>
+	</div>
+								
+								<li>A Site-Sponsored Jam </li>
+</div>
+											
 							<ul class="actions">
 							</ul>
 						</div>
@@ -225,10 +244,7 @@ acceptance testing in wealth operations to translate technical findings, alignin
 												<li><a href="https://github.com/Jodi22K" target="_blank"class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 												<li><a href="K" </li>
 												<li><a href="https://www.linkedin.com/in/jodi-kk22/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-
-</body>
-</html>
-									
+					
 									</ul>
 										</li>
 									</ul>
@@ -276,6 +292,34 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 		</div>
 			</footer>
 		<!-- Scripts -->
+		<!-- LALALA before </body>:
+							Life is Easy
+							Finesse
+							Sun Came Out-->													
+		<select id="themeSongSelect">
+			<option value="hour">Hour</option>
+			<option value="week">Week</option>
+			<option value="month">Month</option>
+		</select>
+		
+		<script>
+	const themeTracks = {
+		
+		Site: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2111114070&color=%23c92c7f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+			
+		Week: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A464956629&color=%23733e69&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+			
+		Month: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"		
+	};
+	const themeSongSelect = document.getElementById("themeSongSelect");
+	const themeSongFrame = document.getElementById("themeSongFrame");
+	
+	themeSongSelect.addEventListener("change", function () {
+	themeSongFrame.src = themeTracks[themeSongSelect.value];
+	});		
+			
+</script>
+				
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
