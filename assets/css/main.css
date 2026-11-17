@@ -128,13 +128,16 @@ input, select, textarea {
 	cursor: url("../../capoint.jpg") 0 0, pointer;
 }
 
-.mood-tile[data-mood="sad"]         { --mood-tint: #91c5ed; }
+
 .mood-tile[data-mood="disgust"]     { --mood-tint: #9ed49a; }
-.mood-tile[data-mood="anxiety"]     { --mood-tint: #f5b879; }
-.mood-tile[data-mood="embarrassed"] { --mood-tint: #e99ac1; }
 .mood-tile[data-mood="joy"]         { --mood-tint: #f2d85f; }
+.mood-tile[data-mood="anxiety"]     { --mood-tint: #f5b879; }
+
+.mood-tile[data-mood="anger"]       { --mood-tint: #e58e91; }
+.mood-tile[data-mood="embarrassment"] { --mood-tint: #e99ac1; }
 .mood-tile[data-mood="fear"]        { --mood-tint: #b69add; }
-.mood-tile[data-mood="angry"]       { --mood-tint: #e58e91; }
+
+.mood-tile[data-mood="sadness"]     { --mood-tint: #91c5ed; }
 .mood-tile[data-mood="boredom"]     { --mood-tint: #b8b8bd; }
 .mood-tile[data-mood="envy"]        { --mood-tint: #625b68; color: #fff; }
 
