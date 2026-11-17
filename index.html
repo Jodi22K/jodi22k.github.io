@@ -61,6 +61,7 @@
 									<option value="Site">...Site</option>
 									<option value="Day">...Day</option>
 									<option value="Week">...Week</option>
+									<option value="Bonus">⭐...MMMood</option>
 								</select>
 							</div>
 					
@@ -73,7 +74,16 @@
 									allow="autoplay; encrypted-media"
 									src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
 											</iframe>
-
+							<div id="moodemap" hidden style="position: relative; width: 100%; height: 125px; background: #171322;">
+								<canvas id="moodemapCanvas" aria-label="Mood heatmap made of person-shaped figures"
+									style="display: block; width: 100%; height: 125px;"></canvas>
+								<label for="moodemapColor"
+									style="position: absolute; top: 6px; right: 8px; font-size: 11px; background: #171322cc; padding: 3px 6px;">
+									Heat color:
+									<input id="moodemapColor" type="color" value="#de3ed4" aria-label="Choose heatmap color"
+										style="width: 24px; height: 20px; vertical-align: middle;">
+								</label>
+							</div>
 								
 							<div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
 							
@@ -288,7 +298,13 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 		<!-- LALALA before </body>:
 							Life is Easy
 							S!CK
-							Sun Came Out-->							
+							Sun Came Out
+		#INYAMOODE 
+		
+		 heatmap but in shape of  a bunch of bodies. It uses the hex thingy (yk when u press more colours - that sht, sp lets just make it a square of this that loads the exact same size a sthe soundcloud viz.) the new button is mood.  heatmap (we will eveutally incorp song across the colour spectrum but 
+		
+		-->	
+		
 		<script>
 	const themeTracks = {
 		
@@ -300,13 +316,61 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 	};
 	const themeSongSelect = document.getElementById("themeSongSelect");
 	const themeSongFrame = document.getElementById("themeSongFrame");
+	const moodemap = document.getElementById("moodemap");
+	const moodemapGrid = document.getElementById("moodemapGrid");
+	const moodemapColor = document.getElementById("moodemapColor");
 	
 	themeSongSelect.addEventListener("change", function () {
 	themeSongFrame.src = themeTracks[themeSongSelect.value];
 	});		
+
+	// Temporary transparent SVG silhouette; replace this with your CC image later.
+	const bawdy = "tiny.gif";
 			
+	function rendermoodemap() {
+			const width = moodemapGrid.clientWidth;
+			if (!width) return;
+	
+			const columns = Math.max(1, Math.floor(width / 24));
+			const bodyCount = columns * 3;
+	
+			moodemapGrid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+			moodemapGrid.replaceChildren();
+
+		for (let i = 0; i < bodyCount; i++) {
+			const bodyTile = document.createElement("span");
+			const intensity = 0.4 + ((i * 7) % 6) * 0.1;
+
+			bodyTile.style.cssText = `
+				display: block;
+				min-width: 0;
+				background-color: ${moodemapColor.value};
+				opacity: ${intensity};
+				-webkit-mask: url("${bawdy}") center / contain no-repeat;
+				mask: url("${bawdy}") center / contain no-repeat;
+			`;
+			moodemapGrid.appendChild(bodyTile);
+		}
+	}
+themeSongSelect.addEventListener("change", function () {
+		if (themeSongSelect.value === "Bonus") {
+			themeSongFrame.style.display = "none";
+			moodemap.hidden = false;
+			rendermoodemap();
+			return;
+		}
+
+		moodemap.hidden = true;
+		themeSongFrame.style.display = "";
+		themeSongFrame.src = themeTracks[themeSongSelect.value];
+	});
+
+	moodemapColor.addEventListener("input", rendermoodemap);
+	window.addEventListener("resize", rendermoodemap);
+// OK very demure very devour.
+		
+		
 </script>
-				
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
