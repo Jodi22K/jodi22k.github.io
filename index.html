@@ -325,9 +325,9 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 	// 2
 	fear: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
 	// 3
-	disgust: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+	disgust: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
 	// 4
-	sad: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%235b1cfc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+	sad: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%235b1cfc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
 	// 5
 	embarrassed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
 	// 6
@@ -335,35 +335,39 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 	// 7
 	envy: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
 	// 8
-	boredom: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2111114070&color=%23c92c7f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+	boredom: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2111114070&color=%23c92c7f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
 	// 9
 		};
 
 	const themeSongSelect = document.getElementById("themeSongSelect");
 	const themeSongFrame = document.getElementById("themeSongFrame");
 	const moodemap = document.getElementById("moodemap");
-		
 	const moodTiles = document.querySelectorAll(".mood-tile");
 
-					moodTiles.forEach(function (tile) {
-						tile.addEventListener("click", function () {
-							moodTiles.forEach(function (otherTile) {
-								otherTile.setAttribute("aria-pressed", otherTile === tile);
-							});
-						});
-					});
-	// Temporary transparent SVG silhouette; replace this with your CC image later.
-	// const bawdy = "tiny.gif";
+	themeSongSelect.addEventListener("change", function () {
+		const isBonus = themeSongSelect.value === "Bonus";
 	
-themeSongSelect.addEventListener("change", function () {
-	const isBonus = themeSongSelect.value === "Bonus";
+		moodemap.hidden = !isBonus;
+		themeSongFrame.style.display = isBonus ? "none" : "";
+	
+		if (!isBonus) {
+			themeSongFrame.src = themeTracks[themeSongSelect.value];
+		}	
+		
+	moodTiles.forEach(function (tile) {
+    tile.addEventListener("click", function () {
+        const mood = tile.dataset.mood;
 
-	moodemap.hidden = !isBonus;
-	themeSongFrame.style.display = isBonus ? "none" : "";
+        moodTiles.forEach(function (otherTile) {
+            otherTile.setAttribute("aria-pressed", otherTile === tile);
+        });
 
-	if (!isBonus) {
-		themeSongFrame.src = themeTracks[themeSongSelect.value];
-	}
+        if (themeTracks[mood]) {
+            themeSongFrame.style.display = "";
+            moodemap.hidden = true;
+            themeSongFrame.src = themeTracks[mood];
+        }
+    });
 });
 // OK very demure very devour..,,
 // Courtesy of JKJAMZZZ		
