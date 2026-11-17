@@ -107,12 +107,15 @@ input, select, textarea {
 	width: 100%;
 	height: 60px;
 }
-
 .mood-tile {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 2px 0 0;
+	text-align: center;
 	--mood-tint: #d8d8d8;
 	min-width: 0;
 	min-height: 0;
-	padding: 0.15rem;
 	border: 1px solid rgba(255, 255, 255, 0.65);
 	border-radius: 4px;
 	background-color: var(--mood-tint);
@@ -125,15 +128,15 @@ input, select, textarea {
 	cursor: url("../../capoint.jpg") 0 0, pointer;
 }
 
-.mood-tile[data-mood="sad"]         { --mood-tint: #b9d9f5; }
-.mood-tile[data-mood="disgust"]     { --mood-tint: #c5e8c2; }
-.mood-tile[data-mood="anxiety"]     { --mood-tint: #ffd2a6; }
-.mood-tile[data-mood="embarrassed"] { --mood-tint: #f5c5dc; }
-.mood-tile[data-mood="joy"]         { --mood-tint: #fff0a8; }
-.mood-tile[data-mood="fear"]        { --mood-tint: #d9c8f2; }
-.mood-tile[data-mood="angry"]       { --mood-tint: #f3b7b7; }
-.mood-tile[data-mood="boredom"]     { --mood-tint: #d5d5d5; }
-.mood-tile[data-mood="envy"]        { --mood-tint: #77727d; color: #fff; }
+.mood-tile[data-mood="sad"]         { --mood-tint: #91c5ed; }
+.mood-tile[data-mood="disgust"]     { --mood-tint: #9ed49a; }
+.mood-tile[data-mood="anxiety"]     { --mood-tint: #f5b879; }
+.mood-tile[data-mood="embarrassed"] { --mood-tint: #e99ac1; }
+.mood-tile[data-mood="joy"]         { --mood-tint: #f2d85f; }
+.mood-tile[data-mood="fear"]        { --mood-tint: #b69add; }
+.mood-tile[data-mood="angry"]       { --mood-tint: #e58e91; }
+.mood-tile[data-mood="boredom"]     { --mood-tint: #b8b8bd; }
+.mood-tile[data-mood="envy"]        { --mood-tint: #625b68; color: #fff; }
 
 .mood-tile:hover {
 	filter: brightness(1.06);
