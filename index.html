@@ -333,7 +333,7 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 	// 6
 	angry: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
 	// 7
-	envy: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+	envy: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
 	// 8
 	boredom: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2111114070&color=%23c92c7f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
 	// 9
@@ -353,7 +353,8 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 		if (!isBonus) {
 			themeSongFrame.src = themeTracks[themeSongSelect.value];
 		}	
-		
+    });
+
 	moodTiles.forEach(function (tile) {
     tile.addEventListener("click", function () {
         const mood = tile.dataset.mood;
@@ -366,9 +367,10 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
             themeSongFrame.style.display = "";
             moodemap.hidden = true;
             themeSongFrame.src = themeTracks[mood];
-        }
-    });
-});
+      	themeSongFrame.src = themeTracks[mood];
+		}
+	}); // closes the click listener
+}); // closes moodTiles.forEach
 // OK very demure very devour..,,
 // Courtesy of JKJAMZZZ		
 </script>	
