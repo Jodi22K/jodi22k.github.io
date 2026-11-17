@@ -87,6 +87,7 @@ input, select, textarea {
 	line-height: 1.3;
 }
 /* Nine mood tiles shown when ⭐ Bonus is selected - definitely turn it on - kevin lyttle*/ */
+/* Mood tiles */
 #moodemap {
 	min-height: 0;
 	height: 75px;
@@ -107,11 +108,6 @@ input, select, textarea {
 	height: 60px;
 }
 
-@media screen and (max-width: 480px) {
-	.mood-grid {
-		gap: 2px;
-	}
-	
 .mood-tile {
 	--mood-tint: #d8d8d8;
 	min-width: 0;
@@ -129,15 +125,15 @@ input, select, textarea {
 	cursor: url("../../capoint.jpg") 0 0, pointer;
 }
 
-.mood-tile[data-mood="sad"]         { --mood-tint: #b9d9f5; } /* pastel blue */
-.mood-tile[data-mood="disgust"]     { --mood-tint: #c5e8c2; } /* pastel green */
-.mood-tile[data-mood="anxiety"]     { --mood-tint: #ffd2a6; } /* pastel orange */
-.mood-tile[data-mood="embarrassed"] { --mood-tint: #f5c5dc; } /* pastel pink */
-.mood-tile[data-mood="joy"]         { --mood-tint: #fff0a8; } /* pastel yellow */
-.mood-tile[data-mood="fear"]        { --mood-tint: #d9c8f2; } /* pastel purple */
-.mood-tile[data-mood="angry"]       { --mood-tint: #f3b7b7; } /* pastel red */
-.mood-tile[data-mood="boredom"]     { --mood-tint: #d5d5d5; } /* gray */
-.mood-tile[data-mood="envy"]        { --mood-tint: #77727d; color: #fff; } /* charcoal */
+.mood-tile[data-mood="sad"]         { --mood-tint: #b9d9f5; }
+.mood-tile[data-mood="disgust"]     { --mood-tint: #c5e8c2; }
+.mood-tile[data-mood="anxiety"]     { --mood-tint: #ffd2a6; }
+.mood-tile[data-mood="embarrassed"] { --mood-tint: #f5c5dc; }
+.mood-tile[data-mood="joy"]         { --mood-tint: #fff0a8; }
+.mood-tile[data-mood="fear"]        { --mood-tint: #d9c8f2; }
+.mood-tile[data-mood="angry"]       { --mood-tint: #f3b7b7; }
+.mood-tile[data-mood="boredom"]     { --mood-tint: #d5d5d5; }
+.mood-tile[data-mood="envy"]        { --mood-tint: #77727d; color: #fff; }
 
 .mood-tile:hover {
 	filter: brightness(1.06);
@@ -149,8 +145,15 @@ input, select, textarea {
 	filter: brightness(1.1);
 }
 
-}
+@media screen and (max-width: 480px) {
+	.mood-grid {
+		gap: 2px;
+	}
 
+	.mood-tile {
+		font-size: 0.5rem;
+	}
+}
 
 .theme-song-picker select {
 	max-width: 100%;
