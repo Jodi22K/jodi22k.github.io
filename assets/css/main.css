@@ -131,7 +131,7 @@ input, select, textarea {
 	transition: filter 0.15s ease, transform 0.15s ease;
 }
 .mood-tile {
-	cursor: url("capoint.jpg") 0 0, pointer;
+	cursor: url("assets/css/images/capoint.jpg") 0 0, pointer;
 }
 .mood-tile[data-mood="neutral"] {
 	background-image:
