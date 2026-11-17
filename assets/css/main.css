@@ -127,10 +127,12 @@ input, select, textarea {
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	text-shadow: 0 1px 3px #000;
-	cursor: url("../../capoint.jpg") 0 0, pointer;
+	cursor: url("../../nt.jpg") 0 0, pointer;
 	transition: filter 0.15s ease, transform 0.15s ease;
 }
-
+.mood-tile {
+	cursor: url("capoint.jpg") 0 0, pointer;
+}
 .mood-tile[data-mood="neutral"] {
 	background-image:
 		linear-gradient(rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0.4)),
