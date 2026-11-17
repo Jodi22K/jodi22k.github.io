@@ -66,15 +66,6 @@
 							</div>
 					
 										
-					<div id="moodemap" hidden>
-						<div class="mood-grid">
-							<button type="button" class="mood-tile" data-mood="neutral">Neutral</button>
-							<button type="button" class="mood-tile" data-mood="happy">Happy</button>
-							<button type="button" class="mood-tile" data-mood="sad">Sad</button>
-							<button type="button" class="mood-tile" data-mood="mad">Mad</button>
-						</div>
-					</div>
-					
 					<div class="theme-song-player">
 							<iframe id="themeSongFrame"
 									width="100%"
@@ -84,21 +75,25 @@
 									allow="autoplay; encrypted-media"
 									src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
 									</iframe>
-								
-							<div id="moodemap" hidden style="position: relative; width: 100%; height: 125px; background: #171322;">
-								<canvas id="moodemapGrid" aria-label="Mood heatmap made of person-shaped figures"
-									style="display: block; width: 100%; height: 125px;"></canvas>
-								<label for="moodemapColor"
-									style="position: absolute; top: 6px; right: 8px; font-size: 11px; background: #171322cc; padding: 3px 6px;">
-									Heat color:
-									<input id="moodemapColor" type="color" value="#de3ed4" aria-label="Choose heatmap color"
-										style="width: 24px; height: 20px; vertical-align: middle;">
-								</label>
-							</div>
 					
 							<div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
 							
 							</div>
+
+						<div id="moodemap" hidden>
+							<div class="mood-grid" aria-label="Choose a mood">
+								<button type="button" class="mood-tile" data-mood="sad" aria-pressed="false">Sad</button>
+								<button type="button" class="mood-tile" data-mood="disgust" aria-pressed="false">Disgust</button>
+								<button type="button" class="mood-tile" data-mood="anxiety" aria-pressed="false">Anxiety</button>
+								<button type="button" class="mood-tile" data-mood="embarrassed" aria-pressed="false">Embarrassed</button>
+								<button type="button" class="mood-tile" data-mood="joy" aria-pressed="false">Joy</button>
+								<button type="button" class="mood-tile" data-mood="fear" aria-pressed="false">Fear</button>
+								<button type="button" class="mood-tile" data-mood="angry" aria-pressed="false">Angry</button>
+								<button type="button" class="mood-tile" data-mood="boredom" aria-pressed="false">Boredom</button>
+								<button type="button" class="mood-tile" data-mood="envy" aria-pressed="false">Envy</button>
+							</div>
+						</div>
+			<!-- YOUR STAY  -->			
 							<li style="font-size: 10px;"> During Your Stay </li>
 			<!-- she is just a ... - jaden smith -->
 					 <img src="iconlivin.gif" alt="Iconic Little Dancing Dude In Varying Shades of Blue, With Sunglasses On and A Passion For Mixing It Up On The Flo."
@@ -323,16 +318,40 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 	Day: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
 
 	Week: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+	// IN YA MMMOODE
+	joy: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+	// 1
+	anxiety: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2111114070&color=%23c92c7f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+	// 2
+	fear: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+	// 3
+	disgust: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+	// 4
+	sad: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%235b1cfc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+	// 5
+	embarrassed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+	// 6
+	angry: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+	// 7
+	envy: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+	// 8
+	boredom: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2111114070&color=%23c92c7f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+	// 9
+		};
 
-	neutral: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2111114070&color=%23c92c7f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-	happy: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A549733551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-	sad: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%23de3ed4&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-	mad: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A863534656&color=%235b1cfc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-};
 	const themeSongSelect = document.getElementById("themeSongSelect");
 	const themeSongFrame = document.getElementById("themeSongFrame");
 	const moodemap = document.getElementById("moodemap");
-	
+		
+	const moodTiles = document.querySelectorAll(".mood-tile");
+
+					moodTiles.forEach(function (tile) {
+						tile.addEventListener("click", function () {
+							moodTiles.forEach(function (otherTile) {
+								otherTile.setAttribute("aria-pressed", otherTile === tile);
+							});
+						});
+					});
 	// Temporary transparent SVG silhouette; replace this with your CC image later.
 	// const bawdy = "tiny.gif";
 	
@@ -350,9 +369,7 @@ themeSongSelect.addEventListener("change", function () {
 // Courtesy of JKJAMZZZ		
 </script>	
 
-		
-		
-</script>
+	
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
