@@ -11,6 +11,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<img class="skills-peek" src="YOUR-IMAGE-FILE" alt="" aria-hidden="true">
+
+	<style>
+		#two .features {
+			position: relative;
+		}
+		
+		.skills-peek {
+			position: absolute;
+			z-index: 3;
+			top: -1.5rem;
+			right: 3rem;
+			width: clamp(100px, 15vw, 180px);
+			height: auto;
+			margin: 0;
+			pointer-events: none;
+		}
+		
+		@media screen and (max-width: 736px) {
+			.skills-peek {
+				top: -0.75rem;
+				right: 1rem;
+				width: 90px;
+			}
+		}
+		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Sidebar -->
