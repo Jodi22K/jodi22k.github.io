@@ -2101,8 +2101,20 @@ input, select, textarea {
 					opacity: 0.1;
 				}
 
-/* Features */
-
+/* Features // ACCESS */
+	body.font-alt,
+	body.font-alt * {
+		font-family: Georgia, serif !important;
+	}
+	
+	#fontToggle {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		z-index: 100;
+		cursor: pointer;
+	}
+	
 	.features {
 		display: -moz-flex;
 		display: -webkit-flex;
