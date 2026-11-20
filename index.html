@@ -376,16 +376,22 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 					event.preventDefault();
 			
 					const frame = document.createElement("iframe");
+					frame.width = "600";
+					frame.height = "338";
+					frame.style.width = "100%";
+					frame.style.maxWidth = "600px";
+					frame.style.height = "338px";
+					frame.style.border = "0";
 					frame.src = "https://www.youtube-nocookie.com/embed/b1B4j5O8614";
 					frame.title = "COMEPOSE";
 					frame.style.cssText = "display:block;width:100%;max-width:600px;aspect-ratio:16/9;border:0;";
 					frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
 					frame.allowFullscreen = true;
-			
+					
 					document.getElementById("videoFrame").replaceChildren(frame);
 				});
 	</script>
-		
+
 	<script>
 	const themeTracks = {
 	Site: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2111114070&color=%23c92c7f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
