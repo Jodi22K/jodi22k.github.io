@@ -324,23 +324,20 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 						
 		<div style="display: flex; justify-content: center;">
 
-
-			<video 
-				style="display: block; width: 100%; max-width: 600px; height: auto; margin: 0 auto;"
-	
-				loop
-				Playsinline 
-				controls 
-				title="Now Go Check Out This Vid I Made That's Quite Calming, Reassuring, Cutesy, Etc Etc <3. Cheers Xx"
-			
-				<source src="cleaurweb.webm"   type="video/webm"> 
-				<!-- poster="whatsmeant2bwilb.jpg"-->
-				<!-- 	<source src="cleaurm.mp4" type="video/mp4">-->
-				<!-- 	<source src="cleaurog.ogg" type="video/ogg">-->
-			Your browser does not support the video tag. Naurrr Cleaurrr :((
-			</video> 
-			
+			<div id="videoFrame" style="display: flex; justify-content: center;">
+				<video
+					style="display: block; width: 100%; max-width: 600px; height: auto; margin: 0 auto;"
+					loop
+					playsinline
+					controls
+					title="Now Go Check Out This Vid I Made That's Quite Calming, Reassuring, Cutesy, Etc Etc <3. Cheers Xx">
+					<source src="cleaurweb.webm" type="video/webm">
+					Your browser does not support the video tag. Naurrr Cleaurrr :((
+				</video>
+			</div>
+						
 		</div >
+					
 		<div style="text-align: center;">	
 					<li>&copy; Untitled.  <a href="TisLititis.jpg" target="_blank" alt="Here, a phone appears to be ringing. The contact info states: 'The big leagues'... (cue Travis).">
 								All rights reserved. 		</a> </li>
@@ -351,7 +348,10 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 							<br />
 							<br />
 
-							<a href="https://www.youtube.com/watch?v=b1B4j5O8614">Category: COMEPOSE</a>
+							<a id="loadComeposeVideo"
+								   href="https://www.youtube.com/watch?v=b1B4j5O8614">
+									Category: COMEPOSE
+								</a>
 							
 			
 					</li>
@@ -366,8 +366,22 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 		#INYAMOODE 
 		
 		 heatmap but in shape of  a bunch of bodies. It uses the hex thingy (yk when u press more colours - that sht, sp lets just make it a square of this that loads the exact same size a sthe soundcloud viz.) the new button is mood.  heatmap (we will eveutally incorp song across the colour spectrum but 
-		
+		can a sexy ldy com make me pose ideally they would possess a smile & also be an incredibly specific person whos laugh i dat lik
 		-->	
+	<script>
+				document.getElementById("loadComeposeVideo").addEventListener("click", function (event) {
+					event.preventDefault();
+			
+					const frame = document.createElement("iframe");
+					frame.src = "https://www.youtube-nocookie.com/embed/b1B4j5O8614";
+					frame.title = "COMEPOSE";
+					frame.style.cssText = "display:block;width:100%;max-width:600px;aspect-ratio:16/9;border:0;";
+					frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+					frame.allowFullscreen = true;
+			
+					document.getElementById("videoFrame").replaceChildren(frame);
+				});
+	</script>
 		
 	<script>
 	const themeTracks = {
