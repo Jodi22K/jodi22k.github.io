@@ -86,7 +86,83 @@ input, select, textarea {
 	font-size: 0.8rem;
 	line-height: 1.3;
 }
-/* Nine mood tiles shown when ⭐ Bonus is selected - definitely turn it on - kevin lyttle*/ */
+/* Mood palettes */
+body.disgusteded {
+	--mood-primary: #9ed49a;
+	--mood-secondary: #60ca51;
+	--mood-background: #312450;
+}
+
+body.joyeded {
+	--mood-primary: #f2d85f;
+	--mood-secondary: #db50db;
+	--mood-background: #4d3e24;
+}
+
+body.anxieted {
+	--mood-primary: #f5b879;
+	--mood-secondary: #ff5500;
+	--mood-background: #49372f;
+}
+
+body.angereded {
+	--mood-primary: #e58e91;
+	--mood-secondary: #e04674;
+	--mood-background: #4a2a35;
+}
+
+body.embarrassmented {
+	--mood-primary: #e99ac1;
+	--mood-secondary: #e83ff4;
+	--mood-background: #4a2f43;
+}
+
+body.feareded {
+	--mood-primary: #b69add;
+	--mood-secondary: #681cfb;
+	--mood-background: #302744;
+}
+
+body.sadnesseded {
+	--mood-primary: #91c5ed;
+	--mood-secondary: #0034ff;
+	--mood-background: #26384a;
+}
+
+body.boredomded {
+	--mood-primary: #b8b8bd;
+	--mood-secondary: #bcad8a;
+	--mood-background: #38383d;
+}
+
+body.envieded {
+	--mood-primary: #625b68;
+	--mood-secondary: #0a1410;
+	--mood-background: #1e2421;
+}
+
+body {
+	background: var(--mood-background, #312450);
+	transition: background-color 0.4s ease;
+}
+
+.wrapper.style1 {
+	background: var(--mood-primary, #5e42a6);
+}
+
+.wrapper.style2 {
+	background: var(--mood-secondary, #5052c5);
+}
+
+.wrapper.style3 {
+	background: var(--mood-background, #b74e91);
+}
+
+a:hover,
+button:hover {
+	color: var(--mood-primary, #ffffff);
+}
+/* Nine mood tiles shown when ⭐ Bonus is selected - definitely turn it on - kevin lyttle*/
 /* Mood tiles */
 #moodemap {
 	min-height: 0;
