@@ -484,38 +484,35 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 		}	
     });
 
-			
 	moodyjoody.forEach(function (tile) {
     tile.addEventListener("click", function () {
         const mood = tile.dataset.mood;
 		
-		moodyjoody.forEach(function (otherTile) {
-			otherTile.setAttribute("aria-pressed", otherTile === tile ? "true" : "false");
-		});
-		
-		const moodClasses = [
-				"disgusteded",
-				"joyeded",
-				"anxieted",
-				"angereded",
-				"embarrassmented",
-				"feareded",
-				"mood-sadness",
-				"boredomded",
-				"envieded"
-			];
+		document.body.classList.remove(
+			"disgusteded",
+			"joyeded",
+			"anxieted",
+			"angereded",
+			"embarrassmented",
+			"feareded",
+			"mood-sadness",
+			"boredomded",
+			"mood-envy"
+		);
 
-			document.body.classList.remove(...moodClasses);
-			document.body.classList.add("mood-" + mood);
+document.body.classList.add("mood-" + mood);
+        moodyjoody.forEach(function (otherTile) {
+            otherTile.setAttribute("aria-pressed", otherTile === tile);
+        });
 
-			if (themeTracks[mood]) {
-				themeSongFrame.style.display = "";
-				moodemap.hidden = true;
-					themeSongFrame.src = themeTracks[mood];
+        if (themeTracks[mood]) {
+            themeSongFrame.style.display = "";
+            moodemap.hidden = true;
+            themeSongFrame.src = themeTracks[mood];
+      	themeSongFrame.src = themeTracks[mood];
 		}
-	});
-});
- // closes moodyjoody.forEach
+	}); // closes the click listener
+}); // closes moodyjoody.forEach
 // OK very demure very devour..,,
 // Courtesy of JKJAMZZZ		
 </script>	
