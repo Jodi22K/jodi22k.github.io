@@ -403,16 +403,19 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 			}); 
 		</script> -->
 		<script>
-				const zoomTip = document.getElementById("zoomTip");
+		const zoomTip = document.getElementById("zoomTip");
+				const fontToggle = document.getElementById("fontToggle");
+				const closeZoomTip = document.getElementById("closeZoomTip");
 			
-				if (window.innerWidth > 736) {
+				fontToggle.addEventListener("click", function () {
 					zoomTip.showModal();
-				}
+				});
 			
-				document.getElementById("closeZoomTip").addEventListener("click", () => {
+				closeZoomTip.addEventListener("click", function () {
 					zoomTip.close();
 				});
-			</script>
+		</script>
+	
 		
 		
 		<script>
