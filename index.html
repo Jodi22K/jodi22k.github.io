@@ -40,7 +40,11 @@
 		</style>
 	</head>
 	<body class="is-preload">
-		
+		<dialog id="zoomTip">
+			<p><strong>You May Need A Closer Look...</strong><br>
+			Desktop: <kbd>Ctrl</kbd> + <kbd>+</kbd> 2 zoommm In, <kbd>Ctrl</kbd> + <kbd>-</kbd> 2 zoommm Out.</p>
+			<button type="button" id="closeZoomTip">Got it.</button>
+		</dialog>
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
@@ -52,6 +56,7 @@
 							<li><a href="#two" title="breathe">My Skills</a></li>
 							<li><a href="#three" title="POSE">Get in Touch</a></li>
 							<li><button id="fontToggle" type="button">Eyez Hurting?</button></li>
+							
 						</ul>
 					</nav>
 				</div>
@@ -395,8 +400,21 @@ Retrieved 2026-11-07, License - CC BY-SA 3.0
 				fontToggle.textContent = alternateFont
 					? "Restore original font"
 					: "Change font";
-			}); -->	
-		</script>
+			}); 
+		</script> -->
+		<script>
+				const zoomTip = document.getElementById("zoomTip");
+			
+				if (window.innerWidth > 736) {
+					zoomTip.showModal();
+				}
+			
+				document.getElementById("closeZoomTip").addEventListener("click", () => {
+					zoomTip.close();
+				});
+			</script>
+		
+		
 		<script>
 				document.getElementById("loadComeposeVideo").addEventListener("click", function (event) {
 					event.preventDefault();
