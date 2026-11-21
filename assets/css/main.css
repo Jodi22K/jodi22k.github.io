@@ -160,6 +160,16 @@ input, select, textarea {
 		font-size: 0.5rem;
 	}
 }
+#zoomTip {
+	border: 1px solid #fff3;
+	border-radius: 8px;
+	background: #312450;
+	color: white;
+}
+
+#zoomTip::backdrop {
+	background: rgba(0, 0, 0, 0.35);
+}
 
 .theme-song-picker select {
 	max-width: 100%;
