@@ -162,7 +162,7 @@ input, select, textarea {
 }
 #zoomTip {
 	border: 1px solid #fff3;
-	border-radius: 8px;
+	border-radius: 6px;
 	background: #312450;
 	color: white;
 }
